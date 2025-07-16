@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Meghna Tomar</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            max-width: max-content;
+            height:600px;
+            margin:0;
+            display: grid;
+            padding-top: 120px;
+            grid-template-rows: 500px 100px;
+            grid-template-columns: 1fr 30px 30px 30px 30px 30px 1fr;
+            align-items: center;
+            justify-items: center;
+            font-family: 'Poppins', sans-serif;
+             background: linear-gradient(135deg, #ffffff, #d1f0e0, #96c7b9);
+            color: #5a4633;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #96c7b9;
+            padding: 15px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            color: #79a095;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            position: sticky;
+            margin-left: 320px;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: #67887f;
+            margin: 10px auto 0;
+        }
+
+       .item img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-top: 15px;
+}
+
+.name {
+    margin-bottom: 2px;
+    color: #415751;
+}
+
+.occupation {
+    font-style: italic;
+    margin-top: 2px;
+}
+
+main#carousel {
+    grid-row: 1 / 2;
+    grid-column: 1 / 8;
+    width: 100vw;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    --items: 5;
+    --middle: 3;
+    --position: 1;
+    pointer-events: none;
+}
+
+div.item {
+    text-align: center;
+    padding: 20px;
+    border: 3px solid #71998e;
+    border-radius: 20px;
+    background-color: #aaaaaa;
+    position: absolute;
+    width: 400px;
+    height: 350px;
+    background-color: rgb(247, 244, 244);
+    --r: calc(var(--position) - var(--offset));
+    --abs: max(calc(var(--r) * -1), var(--r));
+    transition: all 0.25s linear;
+    transform: rotateY(calc(-10deg * var(--r)))
+    translateX(calc(-300px * var(--r)));
+    z-index: calc((var(--position) - var(--abs)));
+}
+
+div.item:nth-of-type(1) {
+    --offset: 1;
+}
+div.item:nth-of-type(2) {
+    --offset: 2;
+}
+div.item:nth-of-type(3) {
+    --offset: 3;
+}
+div.item:nth-of-type(4) {
+    --offset: 4;
+}
+div.item:nth-of-type(5) {
+    --offset: 5;
+}
+
+input:nth-of-type(1) {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+input:nth-of-type(1):checked ~ main#carousel {
+    --position: 1;
+}
+
+input:nth-of-type(2) {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+}
+input:nth-of-type(2):checked ~ main#carousel {
+    --position: 2;
+}
+
+input:nth-of-type(3) {
+    grid-column: 4 /5;
+    grid-row: 2 / 3;
+}
+input:nth-of-type(3):checked ~ main#carousel {
+    --position: 3;
+}
+
+input:nth-of-type(4) {
+    grid-column: 5 / 6;
+    grid-row: 2 / 3;
+}
+input:nth-of-type(4):checked ~ main#carousel {
+    --position: 4;
+}
+
+input:nth-of-type(5) {
+    grid-column: 6 / 7;
+    grid-row: 2 / 3;
+}
+input:nth-of-type(5):checked ~ main#carousel {
+    --position: 5;
+}
+section#projects {
+  text-align: center;      /* ✅ This centers inline elements */
+  margin-top: 20px;
+  margin-bottom: 20px;
+       /* ✅ Adjust as needed */
+}
+
+input[type="radio"] {
+  display: inline-block;
+  margin: 50px 8px 0;       /* Top margin moved here */
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #67887f;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  vertical-align: middle;
+  align-items: center;
+  margin-bottom: 30px;
+   transform: translateX(+170px);
+}
+
+input[type="radio"]:checked {
+  background: #67887f;
+}
+
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="internships.html">Internships</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="achievements.html">Achievements</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <section id="projects" class="section">
+        <div class="container">
+            <h2>Projects</h2>
+    
+    <input class="inp" type="radio" name="position" />
+    <input class="inp" type="radio" name="position" />
+    <input class="inp" type="radio" name="position" checked/>
+    <input class="inp" type="radio" name="position" />
+    <input class="inp" type="radio" name="position" />
+    
+    <main id="carousel">
+  <div class="item">
+    <img src="1.jpg">
+    <h3 class="name">VerdeVogue</h3>
+    <p class="occupation">Tech Stack: HTML, CSS, JS, Firebase, Figma, UI/UX</p>
+    <ul class="testimonial">
+      <li>Built a sustainable fashion platform promoting ethical shopping habits.</li><br>
+      <li>Designed intuitive UI with eco-score tracking and smart suggestions.</li><br>
+      <li>Educates users on mindful consumption through an interactive experience.</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <img src="2.jpg">
+    <h3 class="name">KrishiNect</h3>
+    <p class="occupation">Tech Stack: HTML, CSS, JS, Firebase, Node.js, APIs</p>
+    <ul class="testimonial">
+      <li>Connected farmers to mandis and buyers using real-time listings.</li><br>
+      <li>Implemented crop management dashboard with live market prices.</li><br>
+      <li>Bridged digital access gap for rural agricultural communities.</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <img src="3.jpg">
+    <h3 class="name">MannMitra</h3>
+    <p class="occupation">Tech Stack: React, Express, MongoDB, Node.js, Gen AI</p>
+    <ul class="testimonial">
+      <li>Created a digital wellness companion for stress and anxiety relief.</li><br>
+      <li>Included journaling, mannbot, guided meditation, and therapy assistance tools.</li><br>
+      <li>Focused on mental health awareness among youth through tech.</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <img src="4.jpg">
+    <h3 class="name">Rupeasy</h3>
+    <p class="occupation">Tech Stack: HTML, JS, Python (Flask), ML, Node.js, MongoDB</p>
+    <ul class="testimonial">
+      <li>Developed a microloan platform with AI-based credit scoring.</li><br>
+      <li>Enabled borrowers and lenders to manage profiles and track activity.</li><br>
+      <li>Promoted financial inclusion via a secure digital channel.</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <img src="5.jpg">
+    <h3 class="name">PulseCity</h3>
+    <p class="occupation">Tech Stack: Vanilla JS, MongoDB, ML Model, Node.js</p>
+    <ul class="testimonial">
+      <li>Launched a civic issue reporting network with reward system.</li><br>
+      <li>Automatically routed reports to authorities using geolocation.</li><br>
+      <li>Encouraged citizen engagement for a smarter and safer city.</li>
+    </ul>
+  </div>
+</main>
+<script>
+  // Fade in on page load
+  window.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("fade-in");
+  });
+
+  // Fade out before navigating
+  document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", e => {
+      const target = link.getAttribute("href");
+      if (target && !target.startsWith("#") && !link.hasAttribute("target")) {
+        e.preventDefault();
+        document.body.classList.remove("fade-in");
+        document.body.style.opacity = 0;
+        setTimeout(() => {
+          window.location.href = target;
+        }, 400);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

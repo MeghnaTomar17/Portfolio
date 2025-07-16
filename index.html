@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="internships.html">Internships</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="achievements.html">Achievements</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="home">
+        <div class="container">
+            <h2 class="greeting">Hello, I'm</h2>
+            <h1 class="title">Meghna Tomar</h1>
+            <p class="typing-effect">Aspiring Software Developer | AI ML Enthusiast | Problem Solver | Building Tech for Impact</p>
+            <p class="quote">"My Mantra ~ Innovation and Perseverance fuel the path to success."</p>
+            <div class="profile-container">
+                <img src="profile.jpg" alt="Profile Picture" class="profile-pic" style="width: 200px; height: 200px;">
+            </div>
+            <p class="intro">A passionate developer fueled by curiosity and purpose, constantly exploring the evolving world of tech.
+            With a deep interest in AI, design, and impactful problem-solving, I thrive to build meaningful digital experiences.
+        Let’s build something meaningful, together.</p>
+            <div class="cta-buttons">
+                <a href="projects.html" class="btn">View My Work</a>
+                <a href="resume.pdf" class="btn" download>Download Resume</a>
+            </div>
+            <div class="social-links">
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </section>
+    <script>
+  // Fade in on page load
+  window.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("fade-in");
+  });
+
+  // Fade out before navigating
+  document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", e => {
+      const target = link.getAttribute("href");
+      if (target && !target.startsWith("#") && !link.hasAttribute("target")) {
+        e.preventDefault();
+        document.body.classList.remove("fade-in");
+        document.body.style.opacity = 0;
+        setTimeout(() => {
+          window.location.href = target;
+        }, 200);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

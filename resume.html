@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume | Meghna Tomar</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            padding-top: 80px;
+            font-family: 'Poppins', sans-serif;
+           background: linear-gradient(135deg, #ffffff, #d1f0e0, #96c7b9);
+            color: #493d31;
+            text-align: center;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #96c7b9;
+            padding: 15px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            color: #79a095;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            position: sticky;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: #67887f;
+            margin: 10px auto 0;
+        }
+
+        .resume-container {
+            max-width: 800px;
+            margin: auto;
+            padding: 2rem;
+            background: #7cb4a4;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+         iframe {
+      width: 100%;
+      max-width: 900px;
+      height: 600px;
+      border: none;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+        .resume-container a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #618a7f;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            border-radius: 5px;
+        }
+
+        .resume-container a:hover {
+            background: #96c7b9;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="internships.html">Internships</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="achievements.html">Achievements</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <section id="resume" class="section">
+        <div class="container">
+            <h2>My Resume</h2>
+            <div class="resume-container">
+                <p>Click below to download my resume:</p>
+                <a href="resume.pdf" target="_blank">Download Resume (PDF)</a><br><br><br>
+                 <iframe src="Resume.pdf" title="Meghna Tomar Resume"></iframe>
+            </div>
+        </div>
+    </section>
+    <script>
+  // Fade in on page load
+  window.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("fade-in");
+  });
+
+  // Fade out before navigating
+  document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", e => {
+      const target = link.getAttribute("href");
+      if (target && !target.startsWith("#") && !link.hasAttribute("target")) {
+        e.preventDefault();
+        document.body.classList.remove("fade-in");
+        document.body.style.opacity = 0;
+        setTimeout(() => {
+          window.location.href = target;
+        }, 400);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

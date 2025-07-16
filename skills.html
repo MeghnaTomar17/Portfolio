@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skills | Meghna Tomar</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      padding-top: 80px;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffffff, #d1f0e0, #96c7b9);
+      color: #493d31;
+      margin: 0;
+      transition: opacity 0.4s ease;
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #96c7b9;
+      padding: 15px 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      padding: 0;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+
+    nav li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav li a:hover {
+      color: #2f443e;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-align: center;
+      color: #79a095;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin: 40px 0 20px;
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 4px;
+      background: #67887f;
+      margin: 10px auto 0;
+    }
+
+    .brain-map {
+      position: relative;
+      margin: 50px auto;
+      width: 600px;
+      height: 500px;
+      max-width: 90%;
+    }
+
+    .brain-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.15;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      border-radius: 20px;
+    }
+
+    .zone {
+      position: absolute;
+      padding: 12px 18px;
+      border-radius: 12px;
+      background: rgba(150, 199, 185, 0.9);
+      color: #1f1f1f;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 2;
+      box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .zone:hover {
+      background: #8bcab8;
+      transform: scale(1.1);
+    }
+
+    .tooltip {
+      display: none;
+      position: absolute;
+      background: #fff;
+      color: #2f443e;
+      padding: 10px 12px;
+      border-radius: 8px;
+      width: 220px;
+      font-size: 0.85rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+      top: 110%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 5;
+    }
+
+    .zone:hover .tooltip {
+      display: block;
+    }
+
+    /* Adjust zone positions manually */
+    .frontend  { top: 80px; left: 110px; }
+    .backend   { top: 200px; right: 162px; }
+    .tools     { top: 280px; left: 125px; }
+    .soft      { top: 300px; right: 80px; }
+    .ai        { top: 60px; right: 100px; }
+    .creative  { top: 180px; left: 200px; }
+
+    .bubble-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .bubble {
+      position: absolute;
+      bottom: -50px;
+      background-color: rgba(255, 255, 255, 0.3);
+      color: #2f443e;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      animation: floatUp 12s infinite linear;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-120vh) scale(1.1);
+        opacity: 0;
+      }
+    }
+
+    .bubble:nth-child(odd) {
+      background-color: #c8e8dd;
+    }
+
+    .bubble:nth-child(even) {
+      background-color: #dff4ec;
+    }
+
+    .fade-in {
+      opacity: 1;
+    }
+
+    .fade-out {
+      opacity: 0;
+    }
+    .bubble-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.bubble {
+  position: absolute;
+  bottom: -40px;
+  background-color: rgba(255, 255, 255, 0.4);
+  color: #2f443e;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 2rem;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  white-space: nowrap;
+  opacity: 0;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-110vh) scale(1.1);
+    opacity: 0;
+  }
+}
+
+  </style>
+</head>
+<body class="fade-in">
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="internships.html">Internships</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="achievements.html">Achievements</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="skills">
+    <div class="container">
+      <h2>My Skills</h2>
+      <div class="brain-map">
+        <img src="brain.png" alt="Brain Map" class="brain-img">
+        <div class="zone frontend">Frontend
+          <div class="tooltip">• HTML, CSS, JS<br>• Responsive Design<br>• Figma & UI Aesthetics<br>• Learning React</div>
+        </div>
+        <div class="zone backend">Backend
+          <div class="tooltip">• Python, C++<br>• Firebase, MongoDB<br>• API Integration<br>• Learning Node.js</div>
+        </div>
+        <div class="zone tools">Tools
+          <div class="tooltip">• Git & GitHub<br>• VS Code, Kaggle<br>• Canva, Google Workspace</div>
+        </div>
+        <div class="zone soft">Soft Skills
+          <div class="tooltip">• Leadership & Empathy<br>• Communication<br>• Strategic Thinking<br>• Problem Solving</div>
+        </div>
+        <div class="zone ai">AI/ML
+          <div class="tooltip">• Agentic AI, LangChain<br>• Prompt Engineering<br>• AI Workflows</div>
+        </div>
+        <div class="zone creative">Creative
+          <div class="tooltip">• Content Writing & Storytelling<br>• Canva Designs<br>• Tennis Player<br>• Multitasker</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating Skill Bubbles -->
+  <div class="bubble-container">
+    <!-- LEFT BUBBLES -->
+    <div class="bubble" style="left: 40px; animation-delay: 1s;">HTML</div>
+    <div class="bubble" style="left: 100px; animation-delay: 3s;">CSS</div>
+    <div class="bubble" style="left: 150px; animation-delay: 5s;">Python</div>
+    <div class="bubble" style="left: 70px; animation-delay: 2s;">Figma</div>
+    <div class="bubble" style="left: 120px; animation-delay: 4s;">Git</div>
+
+    <!-- RIGHT BUBBLES -->
+    <div class="bubble" style="right: 40px; animation-delay: 2s;">AI</div>
+    <div class="bubble" style="right: 90px; animation-delay: 4s;">JS</div>
+    <div class="bubble" style="right: 140px; animation-delay: 1s;">C++</div>
+    <div class="bubble" style="right: 80px; animation-delay: 3s;">Firebase</div>
+    <div class="bubble" style="right: 130px; animation-delay: 5s;">Canva</div>
+  </div>
+<div id="bubble-area" class="bubble-container"></div>
+
+<script>
+  const skills = [
+    'HTML', 'CSS', 'JavaScript', 'Python', 'C++',
+    'Figma', 'Firebase', 'GitHub', 'Ai Agents', 'Canva',
+    'C','Learning ML', 'Node.js', 'APIs', 'Learning React',
+    'Web Development'
+  ];
+
+  function createBubble() {
+    const bubble = document.createElement('div');
+    bubble.classList.add('bubble');
+
+    // Randomly choose skill
+    const skill = skills[Math.floor(Math.random() * skills.length)];
+    bubble.textContent = skill;
+
+    // Randomly position left or right (within 200px zone)
+    const side = Math.random() < 0.5 ? 'left' : 'right';
+    const offset = Math.floor(Math.random() * 160) + 40; // 40px–200px
+    bubble.style[side] = `${offset}px`;
+
+    // Random animation duration and delay
+    const duration = Math.random() * 5 + 8; // 8s to 13s
+    const delay = Math.random() * 5; // up to 5s
+    bubble.style.animation = `floatUp ${duration}s linear ${delay}s forwards`;
+
+    // Add to container
+    document.getElementById('bubble-area').appendChild(bubble);
+
+    // Remove after animation completes
+    setTimeout(() => {
+      bubble.remove();
+    }, (duration + delay) * 1000);
+  }
+
+  // Keep adding bubbles forever
+  setInterval(createBubble, 1000);
+
+    document.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", e => {
+        const target = link.getAttribute("href");
+        if (target && !target.startsWith("#") && !link.hasAttribute("target")) {
+          e.preventDefault();
+          document.body.classList.remove("fade-in");
+          document.body.classList.add("fade-out");
+          setTimeout(() => {
+            window.location.href = target;
+          }, 400);
+        }
+      });
+    });
+    
+  </script>
+</body>
+</html>

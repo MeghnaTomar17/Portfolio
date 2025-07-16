@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses | Meghna Tomar</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+         body {
+            padding-top: 80px;
+            font-family: 'Poppins', sans-serif;
+           background: linear-gradient(135deg, #ffffff, #d1f0e0, #96c7b9);
+            color: #493d31;
+            text-align: center;
+            animation: gradientMove 15s ease infinite;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #96c7b9;
+            padding: 15px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            color: #79a095;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            position: sticky;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: #67887f;
+            margin: 10px auto 0;
+        }
+
+        .hex-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 0 20px 80px;
+}
+
+.hex {
+  position: relative;
+  width: 200px;
+  height: 115px;
+  background: #bcdfd5;
+  margin: 57.5px 10px;
+  color: #402e2a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 2px 4px 10px rgba(0,0,0,0.2);
+}
+
+.hex:before,
+.hex:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+}
+
+.hex:before {
+  bottom: 100%;
+  border-bottom: 57.5px solid #b3dacf;
+}
+
+.hex:after {
+  top: 100%;
+  border-top: 57.5px solid #88ada2;
+}
+
+.hex:hover {
+  background: #a3cfc2;
+  transform: scale(1.05);
+  cursor: pointer;
+  color: #222;
+}
+
+.hex span {
+  padding: 10px;
+  z-index: 1;
+}
+
+.modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #000;
+    }
+
+    .modal.show {
+      display: flex;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      font-size: 2rem;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      .hex {
+        width: 120px;
+        height: 70px;
+      }
+      .hex:before, .hex:after {
+        border-left: 60px solid transparent;
+        border-right: 60px solid transparent;
+      }
+      .hex:before {
+        border-bottom: 35px solid #ffffff30;
+      }
+      .hex:after {
+        border-top: 35px solid #ffffff30;
+      }
+    }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="internships.html">Internships</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="achievements.html">Achievements</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <section id="courses" class="section">
+        <div class="container">
+            <h2>Courses</h2>
+            <div class="hex-grid"> 
+                <div class="hex" onclick="openModal('certificates/ai-essentials.png')">
+                    <span>AI Essentials<br><small>By Google - Coursera</small></span>
+                </div>
+                
+                     <div class="hex"onclick="openModal('frontend.png')">
+                        <span>Introduction to Frontend Dev<br><small>By Meta – Coursera</small></span>
+                    </div> 
+                    <div class="hex" onclick="openModal('backend.png')">
+                        <span>Introduction to Backend Dev<br><small>By Meta – Coursera</small></span>
+                    </div> 
+                    <div class="hex" onclick="openModal('default.png')">
+                        <span>Python for Everyone<br><small>By University of Michigan – Coursera</small></span>
+                    </div>
+                     <div class="hex" onclick="openModal('mlsa.png')">
+                        <span>Intro to Agentic AI<br><small>By Microsoft Learner Student Ambassador– K.A.M.A.L.A</small></span>
+                    </div>
+                     <div class="hex" onclick="openModal('genai.png')">
+                        <span>Introduction to Generative AI<br><small> By Google Cloud</small></span>
+                    </div>
+                     <div class="hex" onclick="openModal('deloitte.png')">
+                        <span>Job Simulation- Data Analytics and Technology <br><small>By Deloitte Australia</small></span>
+                    </div> 
+                    <div class="hex" onclick="openModal('git.png')">
+                        <span>Git & GitHub Bootcamp<br><small> By Let's Upgrade</small></span>
+                    </div> 
+                </div> 
+        </div>
+    </section>
+    <div class="modal" id="certificateModal">
+    <span class="close-btn" onclick="closeModal()">×</span>
+    <img id="modalImage" src="" alt="Certificate Preview">
+  </div>
+
+  <script>
+    function openModal(imgPath) {
+      document.getElementById("modalImage").src = imgPath;
+      document.getElementById("certificateModal").classList.add("show");
+    }
+
+    function closeModal() {
+      document.getElementById("certificateModal").classList.remove("show");
+    }
+  
+  // Fade in on page load
+  window.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("fade-in");
+  });
+
+  // Fade out before navigating
+  document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", e => {
+      const target = link.getAttribute("href");
+      if (target && !target.startsWith("#") && !link.hasAttribute("target")) {
+        e.preventDefault();
+        document.body.classList.remove("fade-in");
+        document.body.style.opacity = 0;
+        setTimeout(() => {
+          window.location.href = target;
+        }, 400);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
